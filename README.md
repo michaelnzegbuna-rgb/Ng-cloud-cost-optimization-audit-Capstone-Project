@@ -85,14 +85,6 @@ Scripts and templates provided in `/infra` and `/scripts`:
 
 ---
 
-## 🎥 Demo Video Script (2–3 Minutes)
-- **0:00–0:20:** Intro – Nigerian startups overspend on cloud  
-- **0:20–0:50:** Show baseline environment (oversized VM, premium App Service, SQL DB, orphaned resources)  
-- **0:50–1:20:** Show Azure Monitor + Advisor recommendations  
-- **1:20–2:00:** Apply rightsizing actions (resize VM, downgrade App Service, switch SQL, delete orphans)  
-- **2:00–2:30:** Show cost analysis before/after  
-- **2:30–2:45:** Closing – highlight ≈83% savings  
-
 ---
 
 ## ✅ Deliverables Checklist
