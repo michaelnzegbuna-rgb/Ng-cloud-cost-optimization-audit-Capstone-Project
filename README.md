@@ -1,10 +1,8 @@
-# Cloud Cost Optimization Audit — Step-by-Step Guide
-
-*Extracted from the full audit report (Cloud-Cost-Optimization-Audit-FINAL.docx / README.md). This is the exact sequence performed for this audit, against the Cost-Audit resource group (Azure subscription 1, South Africa North).*
+# Nigeria Cloud Cost Optimization Audit — Step-by-Step Guide
 
 ---
 
-## 4. Step-by-Step Guide (Azure Portal / GUI)
+## . Step-by-Step Guide (Azure Portal / GUI)
 
 This section walks through the audit exactly as performed for this submission, using the Azure Portal graphical interface (Option A: manual GUI creation) against the resource group Cost-Audit in South Africa North.
 
