@@ -75,9 +75,6 @@ Based on the findings above, the following actions are recommended for this envi
 18. Built the before/after comparison table (Section 3.2 / Section 6.4).
 19. Captured the cost analysis screenshot above as the "before" baseline for the next audit cycle's comparison.
 
-### Step 8 — Write and Export the Audit Report
-20. Filled in the Audit Report Template (Section 6) with the actual findings, screenshots, and numbers captured above.
-21. Exported/finalized as the Word document and this accompanying README.md.
 
 ---
 
