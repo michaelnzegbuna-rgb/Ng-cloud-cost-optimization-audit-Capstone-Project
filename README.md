@@ -21,7 +21,7 @@ Deployed manually via the GUI (Option A):
 - Created a Storage Account, `storagecostaudit` (StorageV2, Standard performance, LRS, Hot default tier) to hold logs/backups, as the reference architecture calls for.
 
 **Figure 1 — VM Essentials: resource group Cost-Audit, size, region, status**
-![VM Essentials](../images/Resource_Group_screen_short.png)
+![VM Essentials]file:///C:/Users/HomePC/Downloads/files%20(1)/cloud-cost-optimization-audit/cloud-cost-optimization-audit/images/Resource_Group_screen_short.png
 
 **Figure 2 — Orphaned disk Essentials: 1024 GiB, Premium SSD v2, Unattached**
 ![Orphaned disk Essentials](../images/Ophan_disk_demo.png)
