@@ -1,4 +1,4 @@
-# Cloud Cost Optimization Audit (MVP)
+# Nigeria Cloud Cost Optimization Audit (MVP)
 
 **Problem:** Startups (including many in Nigeria) routinely overspend on cloud infrastructure because nobody has time to regularly audit usage vs. billed cost. Orphaned resources and oversized VMs quietly burn budget every month.
 
