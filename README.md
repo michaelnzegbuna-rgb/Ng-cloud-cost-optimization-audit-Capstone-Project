@@ -76,7 +76,6 @@ Based on the findings above, the following actions are recommended for this envi
 19. Captured the cost analysis screenshot above as the "before" baseline for the next audit cycle's comparison.
 
 
----
 
 ---
 
