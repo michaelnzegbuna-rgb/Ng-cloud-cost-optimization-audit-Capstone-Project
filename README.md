@@ -2,7 +2,7 @@
 
 ---
 
-##  Step-by-Step Guide (Azure Portal / GUI)
+##  Step-by-Step Guide 
 
 This section walks through the audit exactly as performed for this submission, using the Azure Portal graphical interface (Option A: manual GUI creation) against the resource group Cost-Audit in South Africa North.
 
