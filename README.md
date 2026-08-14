@@ -234,12 +234,31 @@ Audit method: Azure Monitor utilization review (VM CPU metrics, 7-day average), 
 - Resource tagging (owner, environment) so future orphaned resources are traceable, and a recurring Advisor recommendation digest so this review doesn't require a manual portal visit each month.
 - Restrict storagecostaudit's public network access from "all networks" to only what's required.
 
-### 6.6 Conclusion
+### 6.6 Post-Audit Verification
+
+A follow-up check of the environment confirms the recommendations in Section 6.5 have not yet been actioned: the VM is still provisioned as Standard B2ls v2 with the same public IP and source image, and the orphaned disk has not been deleted. This is expected — it was captured as evidence for this report before the fixes are applied, so the before/after savings in Section 6.4 remain projected rather than realized. Re-run this verification after applying the fixes to confirm the savings materialize.
+
+**Figure 9 — Post-audit check: VM configuration unchanged (Standard B2ls v2), confirming fixes are still pending**
+![Post-audit verification](images/Deploy_the_Baseline_After_Environment.png)
+
+### 6.7 Conclusion
 
 Roughly three-quarters of this environment's monthly Azure bill is currently being spent on a disk that is doing no useful work, while its one virtual machine sits at a fraction of a percent CPU utilization. Both are easy, low-risk fixes. Acting on them moves the environment from 10% over its $20/month budget to an estimated 66–74% under budget, with no loss of functionality. Recommended next review date: one full billing cycle after the fixes are applied, then quarterly thereafter as usage grows — this is exactly the discipline described in Section 1 that most early-stage Nigerian startups skip until the bill becomes an emergency.
 
+### 6.8 Demo Video Script (2–3 Minutes)
 
-### 6.8 Deliverables Checklist
+| Time | Screen | Talking Points |
+|---|---|---|
+| 0:00–0:20 | Title slide / talking head | Introduce the problem: Nigerian startups overspend on cloud; introduce this audit. |
+| 0:20–0:50 | Portal — Cost-Audit resource group | Show the deployed environment: vm-cost-audit-demo VM and the orphan-disk-demo sitting unattached. |
+| 0:50–1:20 | Azure Monitor + Advisor Cost tab | Show 0.17% average CPU and Advisor's Cost score of 37% with the unattached-disk recommendation. |
+| 1:20–2:00 | Cost Analysis | Show the $22.01 vs. $20 budget breakdown and the resource-level view isolating the $16.38 orphaned disk. |
+| 2:00–2:30 | Before/after table | Walk through the projected ~69–76% savings once the disk is removed and the VM is scheduled/rightsized. |
+| 2:30–2:45 | Closing | Restate impact ("~70%+ monthly savings") and thank the viewer. |
+
+*Recording tools: the Azure Portal directly (no special tooling needed), plus OBS Studio, Windows Game Bar (Win+G), or Loom for free screen capture.*
+
+### 6.9 Deliverables Checklist
 
 - [x] Deployed resource / architecture — Cost-Audit resource group deployed in Azure (before state captured; disk deletion and VM scheduling recommended but intentionally left un-actioned so their cost impact could be measured for this report).
 - [x] Configuration reference — Section 5 IaC commands provided as an optional accelerator (manual GUI/Option A was used for this submission).
@@ -273,6 +292,7 @@ All figures were captured directly from the Azure Portal for the Cost-Audit reso
 | — | `images/Enviromental_overview_3.png` | VM Essentials with control ribbon (Connect/Start/Stop) |
 | — | `images/Deploy_the_Baseline_Before_Environment.png` | VM hardware, networking, and image configuration |
 | — | `images/Deploy_the_Baseline_Before_Environment_2.png` | VM availability, security, and disk configuration |
+| 9 | `images/Deploy_the_Baseline_After_Environment.png` | Post-audit check: VM configuration unchanged, fixes still pending |
 
 Also see [`gallery/index.html`](./gallery/index.html) for a clickable index of every individual screenshot — download and open it locally, or enable **GitHub Pages** on this repo to browse it live in your browser.
 
@@ -299,7 +319,8 @@ cloud-cost-optimization-audit/
 
 The full step-by-step audit (Sections 4 and 6) can be automated end-to-end with the PowerShell script below, using the **Az PowerShell module**. By default it runs read-only (reports findings without changing anything); pass `-ApplyFixes` to actually delete the confirmed-unneeded orphaned disk and enable VM auto-shutdown.
 
-📥 **[Download Cloud-Cost-Optimization-Audit.ps1](./scripts/Cloud-Cost-Optimization-Audit.ps1)**
+📥 **[Download Cloud-Cost-Optimization-Audit.ps1](./scripts/Cloud-Cost-Optimization-Audit.ps1)** — runs the audit
+📥 **[Download Cloud-Cost-Optimization-Audit-Proof.ps1](./scripts/Cloud-Cost-Optimization-Audit-Proof.ps1)** — same audit, plus a timestamped transcript and a "Proof of Audit Completion" summary as evidence of execution
 
 **Requires:** `Az.Accounts`, `Az.Resources`, `Az.Compute`, `Az.Monitor`, `Az.Advisor`, `Az.CostManagement`
 ```powershell
